@@ -1,5 +1,4 @@
 import exceptions.AgeException;
-import exceptions.NullException;
 import utill.Showable;
 import utill.Swimmable;
 import utill.PlaceEnum;
@@ -27,11 +26,11 @@ public class Baby extends Human implements Swimmable, Showable {
         public static void lookAround(String name) {
             System.out.println(name + " оглядевшись вокург");
         }
-        public static void notice(String name, Tray tray, Box box) throws NullException {
+        public static void notice(String name, Tray tray, Box box) throws NullPointerException {
             if (tray == null)
-                throw new NullException("Название подноса не может быть null или пустым");
+                throw new NullPointerException("Название подноса не может быть null или пустым");
             if (box == null)
-                throw new NullException("Название шкатулки не может быть null или пустым");
+                throw new NullPointerException("Название шкатулки не может быть null или пустым");
             System.out.println(name + " заметила рядом " + tray + " и " + box);
         }
 

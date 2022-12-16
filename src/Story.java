@@ -5,15 +5,15 @@
 // "Страсть как забавно, -- подумала она.
 // -- Вот уж удивится моя сестра!"
 // Оглядевшись вокруг, она заметила плывшие рядом поднос для пирожков и шкатулку Муми-мамы.
-// После недолгого раздумья (хотя на подносе еще оставалось несколько пирожков) она выбрала шкатулку и залезла туда
+// После недолгого раздумья (хотя на подносе еще оставалось несколько пирожков) она выбрала шкатулку, открыла ее и залезла туда
 import exceptions.AgeException;
-import exceptions.NullException;
+import exceptions.NameException;
 import utill.PlaceEnum;
 
 public class Story {
     public static void main(String[] args) throws AgeException {
         try {
-            Info info = new Info();
+            Info info = new Info("О том,  как отомстили Сторожу парка");
             info.createStory();
             info.getStoryName();
             System.out.println();
@@ -68,7 +68,7 @@ public class Story {
 
 
 
-        } catch (AgeException | NullException ex) {
+        } catch (AgeException | NameException | NullPointerException ex) {
             System.out.println(ex.getMessage());
         } finally {
             System.out.println("Конец истории...");
